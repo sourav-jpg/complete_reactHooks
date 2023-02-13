@@ -1,0 +1,16 @@
+import "./styles.css";
+import { useEffect } from "react";
+
+const Child = ({ returnComment }) => {
+  useEffect(() => {
+    console.log("FUCTION CALLED");
+  }, [returnComment]);
+
+  return (
+    <div>
+      <div>{returnComment("sourav")}</div>
+    </div>
+  );
+};
+
+export default Child;

@@ -1,0 +1,18 @@
+import "./styles.css";
+import { useState, useImperativeHandle, forwardRef } from "react";
+
+const Child = forwardRef((props, ref) => {
+  const [toggle, setToggle] = useState(false);
+  useImperativeHandle(ref, () => ({
+    handleToggle(){
+      setToggle(!toggle);
+    }
+  }));
+  return (
+    <div className="App">
+      <button>Btn from Child</button>
+      {toggle && <span>Clicked from Parent</span>}
+    </div>
+  );
+});
+export default Child;
